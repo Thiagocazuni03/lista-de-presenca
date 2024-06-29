@@ -1,0 +1,40 @@
+[
+   {
+      "name": "Joyce",
+      "email": "joyce@gmail.com",
+      "escorts": "1"
+   },
+   {
+      "name": "pietro",
+      "email": ""
+   },
+   {
+      "name": "thiago",
+      "email": "",
+      "escorts": ""
+   },
+   {
+      "name": "Claudia",
+      "email": "clautais7@gmail.com",
+      "escorts": "3"
+   },
+   {
+      "name": "Gabrielly"
+   },
+   {
+      "name": "Carlos"
+   },
+   {
+      "name": "Eliara"
+   },
+   {
+      "name": "beth",
+      "email": "beth@gmail.com",
+      "escorts": ""
+   },
+   {
+      "name": "teste",
+      "email": "",
+      "escorts": ""
+   }
+]
