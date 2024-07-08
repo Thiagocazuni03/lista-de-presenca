@@ -2,37 +2,51 @@ const fs = require('node:fs')
 const qrcode = require('qrcode-terminal');
 const { Client, LocalAuth } = require('whatsapp-web.js');
  
-const client = new Client({
-  webVersionCache: {
-    type: "remote",
-    remotePath:
-      "https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2412.54.html",
-  },
-  authStrategy: new LocalAuth({
-        dataPath: 'session-whatsapp'
-  }),
-   puppeteer: {
-        headless: true,
-        args: [
-            '--no-sandbox',
-            '--disable-setuid-sandbox',
-            '--disable-dev-shm-usage',
-            '--disable-accelerated-2d-canvas',
-            '--disable-gpu',
-            '--window-size=1920x1080'
-        ]
-    }
+// const client = new Client({
+//   webVersionCache: {
+//     type: "remote",
+//     remotePath:
+//       "https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2412.54.html",
+//   },
+//   authStrategy: new LocalAuth({
+//         dataPath: 'session-whatsapp'
+//   }),
+//    puppeteer: {
+//         headless: true,
+//         args: [
+//             '--no-sandbox',
+//             '--disable-setuid-sandbox',
+//             '--disable-dev-shm-usage',
+//             '--disable-accelerated-2d-canvas',
+//             '--disable-gpu',
+//             '--window-size=1920x1080'
+//         ]
+//     }
  
+// });
+const client = new Client({
+    authStrategy: new LocalAuth(),
+    restartOnAuthFail: true,
+    puppeteer: {
+        headless: true,
+        args: [/* your args here */]
+    }
+});
+
+client.on('authenticated', () => {
+    console.log('AUTHENTICATED');
 });
 client.on('qr', (qr) => {
     qrcode.generate(qr, { small: true });
 });
 
 
-client.on('ready', () => {
+client.on('ready',async () => {
+    const version = await client.getWWebVersion();
+    console.log(`WWeb v${version}`);
     console.log('Cliente está pronto!');
 });
-
+ 
 client.on('disconnected', (reason) => {
     console.log('Client was logged out', reason);
 });
