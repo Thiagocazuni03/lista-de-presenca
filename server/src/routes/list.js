@@ -3,12 +3,17 @@ const router = express.Router()
 const listHandlers = require('../js/handler-list')
 const {phoneSanitize, sendMessage} = require('../js/whatsapp-handler')
 const fs = require('node:fs')
+const path = require('node:path')
 
 
  
 router.get('/confirmados',(req, res)=>{
     // res.send(list)
-     listHandlers.showFile(process.cwd()+'../../files/confirmados.txt', (data)=>{
+    console.log('aaaaaa');
+    console.log(__dirname);
+    console.log(process.cwd());
+
+     listHandlers.showFile(process.cwd()+'/files/confirmados.txt', (data)=>{
         res.status(200)
         res.send(JSON.stringify(data))
     }) 
@@ -20,11 +25,11 @@ router.post('/confirmar',express.json(),(req, res)=>{
 
     let content = JSON.stringify(data)
 
-    if(!fs.existsSync(process.cwd()+'../../files')){
+    if(!fs.existsSync(process.cwd()+'/files')){
         fs.mkdirSync('./files')
     }
   
-    listHandlers.addFile(process.cwd()+'../../files/confirmados.txt', content, ()=>{
+    listHandlers.addFile(process.cwd()+'/files/confirmados.txt', content, ()=>{
         res.status(200)
         
         res.send(JSON.stringify({

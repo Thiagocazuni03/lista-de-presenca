@@ -22,7 +22,7 @@
             // Create icon element
             const iconElement = document.createElement('img');
             iconElement.className = 'popup-icon';
-            iconElement.src = `./assets/src/icons/${this.icon}.svg`;
+            iconElement.src = `assets/src/icons/${this.icon}.svg`;
             this.popup.appendChild(iconElement);
 
             // Create message element
@@ -34,7 +34,7 @@
             // Create close button
             const closeButton = document.createElement('div');
             const imgClose = document.createElement('img')
-            imgClose.setAttribute('src', './assets/src/icons/close.svg')
+            imgClose.setAttribute('src', 'assets/src/icons/close.svg')
             imgClose.setAttribute('style', 'width:18px')
             closeButton.append(imgClose)
             closeButton.className = 'popup-close';
@@ -55,9 +55,9 @@
                 // this.popup.style.opacity = '1';
             });
 
-            setTimeout(() => {
-                this.close()
-            }, 3000);
+            // setTimeout(() => {
+            //     this.close()
+            // }, 3000);
         }
 
         close() {

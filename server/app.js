@@ -5,8 +5,9 @@ const cors = require('cors');
 const path = require('node:path')
 app.use(cors());
 
-
-app.use(express.static(path.join(__dirname, '../client')))
+console.log('__dirname');
+console.log(__dirname);
+app.use(express.static(path.join(__dirname, '..','client')))
 app.use('/lista/', list)
 
 app.get('/', (req, res)=>{
@@ -18,7 +19,7 @@ app.get('/', (req, res)=>{
         }
     });
 }) 
-
+ 
 
 
 app.listen(3000, ()=>{
