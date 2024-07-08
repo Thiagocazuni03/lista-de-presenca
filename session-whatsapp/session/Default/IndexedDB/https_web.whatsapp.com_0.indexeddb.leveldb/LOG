@@ -1,0 +1,13 @@
+2024/07/06-20:51:30.211 2fa8 Reusing MANIFEST C:\Users\thiag\OneDrive\Área de Trabalho\projetos\guest-list\session-whatsapp\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/07/06-20:51:30.212 2fa8 Recovering log #489
+2024/07/06-20:51:30.546 2fa8 Level-0 table #495: started
+2024/07/06-20:51:30.569 2fa8 Level-0 table #495: 988577 bytes OK
+2024/07/06-20:51:30.571 2fa8 Delete type=0 #489
+2024/07/06-20:51:31.048 3764 Level-0 table #498: started
+2024/07/06-20:51:31.072 3764 Level-0 table #498: 1067667 bytes OK
+2024/07/06-20:51:31.074 3764 Delete type=0 #496
+2024/07/06-20:51:31.140 3764 Level-0 table #500: started
+2024/07/06-20:51:31.148 3764 Level-0 table #500: 268026 bytes OK
+2024/07/06-20:51:31.150 3764 Delete type=0 #497
+2024/07/06-20:51:31.150 3764 Manual compaction at level-0 from '\x00\x14\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x15\x00\x00\x00' @ 0 : 0; will stop at '\x00$\x00\x00\xc8\x11\x00w\x00o\x00r\x00k\x00e\x00r\x00_\x00w\x00a\x00m\x00_\x00e\x00v\x00e\x00n\x00t\x00s' @ 2024673 : 1
+2024/07/06-20:51:31.150 3764 Compacting 3@0 + 0@1 files

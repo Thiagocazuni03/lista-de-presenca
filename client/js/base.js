@@ -1,4 +1,4 @@
-class Base {
+export default class Base {
     constructor(config) {
         // Configurações padrão
         this.config = {
@@ -9,14 +9,14 @@ class Base {
 
         // Mescla as configurações fornecidas com as configurações padrão
         if (config) {
-            this.config = deepMerge(this.config, config);
+            this.config = this.deepMerge(this.config, config);
         }
     }
    
     createEl(tag, classes){
         let el = document.createElement(tag)
         
-        classes.split(' ').array.forEach(classItem => {
+        classes && classes.split(' ').forEach(classItem => {
              el.classList.add(classItem)
         });
 

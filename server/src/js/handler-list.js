@@ -39,7 +39,3 @@ const listHandlers = {
 }
 
 module.exports = listHandlers
-
-function showList(){
-
-}

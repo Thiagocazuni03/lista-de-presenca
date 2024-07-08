@@ -17,21 +17,47 @@ export default class Form{
                 type:'text',
                 placeholder:'Insira o seu nome',
                 $el:null,
-                name:'name'
+                name:'name',
+                required:true,
+                isValid:undefined
             },
-            'email':{
+            'phone':{
                 tag:'input',
                 type:'text',
-                placeholder:'Insira o seu e-mail',
+                placeholder:'exemplo: (99) 99999-9999',
                 $el:null,
-                name:'email' 
+                name:'phone',
+                maxlength:15,
+                isValid:undefined,
+                required:true,
+                config:{
+                    mask:function(value){
+                        if (!value) return ""
+                        value = value.replace(/\D/g,'')
+                        value = value.replace(/(\d{2})(\d)/,"($1) $2")
+                        value = value.replace(/(\d)(\d{4})$/,"$1-$2")
+                        return value
+                    },
+                    validate:function(value){
+                        if(value.length == 15){
+                            return true
+                        } else {
+                            false
+                        }
+                    },
+                    errorMessage(){
+                        return 'Você não inseriu corretamente o número do telefone'
+                    }
+                }
             },
             'escorts':{
                 tag:'input',
                 type:'number',
+                required:false,
                 placeholder:'Insira a quantidade de acompanhantes',
                 $el:null,
-                name:'escorts' 
+                name:'escorts',
+                isValid:undefined
             }
         }
 
@@ -46,13 +72,12 @@ export default class Form{
         if(isMain){
             this.usedInputs = {
                 "name":this.inputs['name'],
-                "email":this.inputs['email'],
+                "phone":this.inputs['phone'],
                 "escorts":this.inputs['escorts'],
             }
         } else {
              this.usedInputs = {
                 "name":this.inputs['name'],
-                // "email":this.inputs['email'],
             }
         }
     }
@@ -68,9 +93,21 @@ export default class Form{
 
         Object.entries(this.usedInputs).forEach(([key, value])=> {
             let el = document.createElement(value.tag)
-            el.setAttribute('placeholder', value.placeholder)
-            el.setAttribute('type', value.type)
-            el.setAttribute('data-for', value.name)
+
+            el.addEventListener('focus', ()=> el.classList.remove('tx-dg'))
+
+            value.placeholder && el.setAttribute('placeholder', value.placeholder)
+            value.type && el.setAttribute('type', value.type)
+            value.name && el.setAttribute('data-for', value.name)
+            value.maxlength && el.setAttribute('maxlength', value.maxlength)
+
+            if(value.hasOwnProperty('config') && value.config.hasOwnProperty('mask')){
+
+                el.addEventListener("keyup", (event) => {
+                    el.value = value.config.mask(el.value)
+                });
+            }
+
             self.usedInputs[key].$el = el
  
             self.fieldSet.appendChild(el)

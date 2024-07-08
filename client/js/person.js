@@ -5,6 +5,7 @@
         identifier:null,
         name:null,
         email:null,
+        phone:null,
         isMain:true,
         escorts:new Array()
     }
