@@ -334,11 +334,11 @@
             pop.open()
         }
     }
-
+ 
    async function triggerRequest(collection, mdProcessing) {
 
         try {
-            let response = await fetch('http://localhost:3000/lista/confirmar', {
+            let response = await fetch('/lista/confirmar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
