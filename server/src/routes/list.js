@@ -5,6 +5,7 @@ const {phoneSanitize, sendMessage} = require('../js/whatsapp-handler')
 const fs = require('node:fs')
 
 
+ 
 router.get('/confirmados',(req, res)=>{
     // res.send(list)
      listHandlers.showFile(process.cwd()+'../../files/confirmados.txt', (data)=>{

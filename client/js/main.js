@@ -38,7 +38,7 @@
                 html:'Ver lista',
                  click:function(){
                     
-                    triggerList(mdConfirm.close)
+                    triggerList(mdConfirm.close())
                 }
             }
         ])
@@ -111,15 +111,13 @@
         mdConfirm.appendButtons()
 
         initForms(mdConfirm.content)
-    }
+    } 
 
     async function triggerList(cb) {
         
         let response = await getList()
 
         try {
-            console.log('response');
-            console.log(response);
 
             if(response.list && Array.isArray(response.list)){
                 cb && cb()
@@ -142,8 +140,6 @@
             }
 
             function canContinue(container){
-
-                
 
                 let mdConfirm = new Modal({
                     haveHeader:true,
@@ -216,7 +212,7 @@
             // let target = document.getElementsByClassName('inputs')[0];
 
             Array.from(target.children).forEach((el) => {
-                console.log(main.getForm());
+
                 if(el != main.getForm().fieldSet)
                 el.remove()
             });
@@ -340,7 +336,7 @@
    async function triggerRequest(collection, mdProcessing) {
 
         try {
-            let response = await fetch('http://localhost:3000/confirmar', {
+            let response = await fetch('http://localhost:3000/lista/confirmar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -385,7 +381,7 @@
 
         setTimeout(() => {
             // mdConfirm.close()
-            triggerList(mdConfirm.close)
+            triggerList(mdConfirm.close())
         }, 2750);
     }
 
