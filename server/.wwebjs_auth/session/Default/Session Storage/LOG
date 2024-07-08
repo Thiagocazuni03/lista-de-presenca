@@ -1,3 +1,2 @@
-2024/07/08-10:47:41.534 4178 Reusing MANIFEST C:\Users\thiag\OneDrive\Área de Trabalho\projetos\guest-list\server\.wwebjs_auth\session\Default\Session Storage/MANIFEST-000001
-2024/07/08-10:47:41.534 4178 Recovering log #3
-2024/07/08-10:47:41.534 4178 Reusing old log C:\Users\thiag\OneDrive\Área de Trabalho\projetos\guest-list\server\.wwebjs_auth\session\Default\Session Storage/000003.log 
+2024/07/08-11:14:56.609 2ddc Creating DB C:\Users\thiag\OneDrive\Área de Trabalho\projetos\guest-list\server\.wwebjs_auth\session\Default\Session Storage since it was missing.
+2024/07/08-11:14:56.623 2ddc Reusing MANIFEST C:\Users\thiag\OneDrive\Área de Trabalho\projetos\guest-list\server\.wwebjs_auth\session\Default\Session Storage/MANIFEST-000001

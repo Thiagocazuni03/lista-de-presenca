@@ -1,4 +1,0 @@
-2024/07/07-23:15:07.909 28b0 Reusing MANIFEST C:\Users\thiag\OneDrive\Área de Trabalho\projetos\guest-list\server\session-whatsapp\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/07/07-23:15:07.909 28b0 Recovering log #1705
-2024/07/07-23:15:07.926 28b0 Reusing old log C:\Users\thiag\OneDrive\Área de Trabalho\projetos\guest-list\server\session-whatsapp\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/001705.log 
-2024/07/07-23:15:09.416 36cc Manual compaction at level-0 from '\x006\x00\x00\x00' @ 72057594037927935 : 1 .. '\x007\x00\x00\x00' @ 0 : 0; will stop at (end)

@@ -22,5 +22,5 @@ app.get('/', (req, res)=>{
 
 
 app.listen(3000, ()=>{
-    console.log('ouvindo porta 3000 http://localhost:3000/');
+    console.log('ouvindo porta 3000');
 }) 
