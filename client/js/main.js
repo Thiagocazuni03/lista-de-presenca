@@ -119,6 +119,7 @@
 
         try {
 
+
             if(response.list && Array.isArray(response.list)){
                 cb && cb()
                 let container =  document.createElement('div')
@@ -135,6 +136,7 @@
                 canContinue(container)
             } 
 
+            console.log(response);
             if(response.hasOwnProperty('errorcode') && response.errorcode != 0){
                  throw new Error('teste2 deu erro');
             }

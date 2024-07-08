@@ -10,7 +10,18 @@ const client = new Client({
   },
   authStrategy: new LocalAuth({
         dataPath: 'session-whatsapp'
-  }) 
+  }),
+   puppeteer: {
+        headless: true,
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-accelerated-2d-canvas',
+            '--disable-gpu',
+            '--window-size=1920x1080'
+        ]
+    }
  
 });
 client.on('qr', (qr) => {
@@ -22,6 +33,16 @@ client.on('ready', () => {
     console.log('Cliente está pronto!');
 });
 
+client.on('disconnected', (reason) => {
+    console.log('Client was logged out', reason);
+});
+client.pupBrowser.on('disconnected', () => {
+    console.log('Puppeteer browser disconnected');
+});
+
+client.pupBrowser.on('targetdestroyed', () => {
+    console.log('Puppeteer target destroyed');
+});
 
 client.initialize();
 
