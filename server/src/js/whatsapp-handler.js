@@ -36,13 +36,13 @@ client.on('ready', () => {
 client.on('disconnected', (reason) => {
     console.log('Client was logged out', reason);
 });
-client.pupBrowser.on('disconnected', () => {
-    console.log('Puppeteer browser disconnected');
-});
+// client.pupBrowser.on('disconnected', () => {
+//     console.log('Puppeteer browser disconnected');
+// });
 
-client.pupBrowser.on('targetdestroyed', () => {
-    console.log('Puppeteer target destroyed');
-});
+// client.pupBrowser.on('targetdestroyed', () => {
+//     console.log('Puppeteer target destroyed');
+// });
 
 client.initialize();
 
