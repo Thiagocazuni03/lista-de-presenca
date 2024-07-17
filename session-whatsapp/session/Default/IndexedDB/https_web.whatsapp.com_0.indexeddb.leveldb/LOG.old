@@ -1,13 +1,2 @@
-2024/07/06-20:50:54.550 2544 Reusing MANIFEST C:\Users\thiag\OneDrive\Área de Trabalho\projetos\guest-list\session-whatsapp\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/07/06-20:50:54.550 2544 Recovering log #489
-2024/07/06-20:50:54.551 2544 Reusing old log C:\Users\thiag\OneDrive\Área de Trabalho\projetos\guest-list\session-whatsapp\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000489.log 
-2024/07/06-20:50:54.551 2544 Delete type=2 #469
-2024/07/06-20:50:54.551 2544 Delete type=2 #470
-2024/07/06-20:50:54.551 2544 Delete type=2 #471
-2024/07/06-20:50:54.551 2544 Delete type=2 #472
-2024/07/06-20:50:54.552 2544 Delete type=2 #473
-2024/07/06-20:50:54.552 2544 Delete type=2 #474
-2024/07/06-20:50:54.552 2544 Delete type=2 #475
-2024/07/06-20:50:54.552 2544 Delete type=2 #476
-2024/07/06-20:50:54.552 2544 Delete type=2 #477
-2024/07/06-20:50:54.552 2544 Delete type=2 #478
+2024/07/17-09:51:15.611 3c83e Creating DB /root/lista-de-presenca/session-whatsapp/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb since it was missing.
+2024/07/17-09:51:15.705 3c83e Delete type=3 #1
