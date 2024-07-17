@@ -25,11 +25,16 @@ export function getList(){
     // let list = document.getElementsByClassName('list')[0]
     // let ol = document.createElement('ul') 
     return fetch('/lista/confirmados').then(response=> response.json()).then(response => {
-        
+        if(!response || response == ''){
+		return null
+	}
+	else {
+
        return {
             errorcode:0,
             list:JSON.parse(response)
        }
+     }
     }).catch(error => {
         return {
             errorcode:1,

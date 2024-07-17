@@ -1,91 +1,85 @@
-const fs = require('node:fs')
+const fs = require('node:fs');
 const qrcode = require('qrcode-terminal');
 const { Client, LocalAuth } = require('whatsapp-web.js');
- 
-// const client = new Client({
-//   webVersionCache: {
-//     type: "remote",
-//     remotePath:
-//       "https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2412.54.html",
-//   },
-//   authStrategy: new LocalAuth({
-//         dataPath: 'session-whatsapp'
-//   }),
-//    puppeteer: {
-//         headless: true,
-//         args: [
-//             '--no-sandbox',
-//             '--disable-setuid-sandbox',
-//             '--disable-dev-shm-usage',
-//             '--disable-accelerated-2d-canvas',
-//             '--disable-gpu',
-//             '--window-size=1920x1080'
-//         ]
-//     }
- 
-// });
+
+// Configuração do cliente com autenticação local
 const client = new Client({
-    authStrategy: new LocalAuth(),
+    authStrategy: new LocalAuth({
+        dataPath: 'session-whatsapp'
+    }),
     restartOnAuthFail: true,
     puppeteer: {
         headless: true,
-        args: [/* your args here */]
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-accelerated-2d-canvas',
+            '--disable-gpu',
+            '--window-size=1920x1080'
+        ]
     }
 });
 
+// Evento de autenticação
 client.on('authenticated', () => {
     console.log('AUTHENTICATED');
 });
+
+// Geração do QR Code
 client.on('qr', (qr) => {
     qrcode.generate(qr, { small: true });
 });
 
-
-client.on('ready',async () => {
+// Cliente pronto
+client.on('ready', async () => {
     const version = await client.getWWebVersion();
     console.log(`WWeb v${version}`);
     console.log('Cliente está pronto!');
+    
+    // Enviar mensagem de teste ao estar pronto
+    try {
+        const testNumber = '1234567890@c.us'; // Substitua pelo número de teste correto
+        const testMessage = 'Mensagem de teste';
+        console.log('Enviando mensagem de teste...');
+        await client.sendMessage(testNumber, testMessage);
+        console.log('Mensagem de teste enviada com sucesso');
+    } catch (error) {
+        console.error('Erro ao enviar mensagem de teste:', error);
+    }
 });
- 
+
+// Cliente desconectado
 client.on('disconnected', (reason) => {
     console.log('Client was logged out', reason);
 });
-// client.pupBrowser.on('disconnected', () => {
-//     console.log('Puppeteer browser disconnected');
-// });
 
-// client.pupBrowser.on('targetdestroyed', () => {
-//     console.log('Puppeteer target destroyed');
-// });
-
+// Inicializa o cliente
 client.initialize();
 
-// FINAL OPÇÃO 1 FUNCIONANDO 
-
-function sendMessage(msg, number){
-    
-  //pegando o chatId do número
-  //deletando "+" do início e adicionando "@c.us" no final do número
- const chatId = number.substring(1) + "@c.us";
-
- // enviando mensagem para número
- client.sendMessage(chatId, msg);
-
+// Função para enviar mensagem
+async function sendMessage(msg, number) {
+    if (!client || !client.info || !client.info.wid) {
+        throw new Error('Client is not connected');
+    }
+    try {
+        const chatId = number.substring(1) + "@c.us";
+        console.log(`Enviando mensagem para ${chatId}`);
+        await client.sendMessage(chatId, msg);
+        console.log('Mensagem enviada com sucesso para', number);
+    } catch (error) {
+        console.error('Erro ao enviar mensagem:', error);
+    }
 }
 
-
-function phoneSanitize(str){
-    let val = '+55'
-    let number = str.replace(/\D/g, ''); // Aplicando o regex para remover os caracteres não numéricos
- 
-    number = number.slice(0, 2) + number.slice(3);
-
-    console.log('number');
-    console.log( `${val}${number}`);
-
-    return `${val}${number}`
+// Função para sanitizar o número de telefone
+function phoneSanitize(str) {
+    let val = '+55';
+    let number = str.replace(/\D/g, ''); // Removendo caracteres não numéricos
+    number = number.slice(0, 2) + number.slice(3); // Ajustando o número
+    console.log('Sanitized number:', `${val}${number}`);
+    return `${val}${number}`;
 }
 
+module.exports = { phoneSanitize, sendMessage };
 
-
-module.exports = {phoneSanitize, sendMessage}

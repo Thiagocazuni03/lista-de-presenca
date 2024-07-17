@@ -305,6 +305,7 @@
             mdConfirm.close() 
             let mdProcessing = triggerProcessing()
             setTimeout(() => triggerRequest(inputsEnabled, mdProcessing), 1000);
+	    peoples = new Array()
         }
         
         // let fieldSets = mdConfirm.content.getElementsByTagName('fieldset')
