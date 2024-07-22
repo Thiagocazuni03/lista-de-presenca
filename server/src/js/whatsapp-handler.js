@@ -54,6 +54,11 @@ client.on('disconnected', (reason) => {
     console.log('Client was logged out', reason);
 });
 
+const isClientConnected = () => {
+    console.log(client.info);
+    return client.info && client.info.wid;
+};
+
 // Inicializa o cliente
 client.initialize();
 
@@ -81,5 +86,5 @@ function phoneSanitize(str) {
     return `${val}${number}`;
 }
 
-module.exports = { phoneSanitize, sendMessage };
+module.exports = { client,  sendMessage, isClientConnected, phoneSanitize };
 
