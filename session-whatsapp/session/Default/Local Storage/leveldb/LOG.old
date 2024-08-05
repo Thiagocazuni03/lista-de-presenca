@@ -1,3 +1,14 @@
-2024/07/22-03:23:27.875 1f94 Reusing MANIFEST C:\Users\thiag\OneDrive\Área de Trabalho\projetos\guest-list-linux\lista-de-presenca\session-whatsapp\session\Default\Local Storage\leveldb/MANIFEST-000001
-2024/07/22-03:23:27.875 1f94 Recovering log #3
-2024/07/22-03:23:27.876 1f94 Reusing old log C:\Users\thiag\OneDrive\Área de Trabalho\projetos\guest-list-linux\lista-de-presenca\session-whatsapp\session\Default\Local Storage\leveldb/000003.log 
+2024/07/24-16:36:40.469 3ad95 Recovering log #53
+2024/07/24-16:36:40.475 3ad95 Level-0 table #56: started
+2024/07/24-16:36:40.531 3ad95 Level-0 table #56: 3533 bytes OK
+2024/07/24-16:36:40.577 3ad95 Delete type=0 #53
+2024/07/24-16:36:40.577 3ad95 Delete type=3 #36
+2024/07/24-16:36:40.577 3ad95 Compacting 4@0 + 1@1 files
+2024/07/24-16:36:40.605 3ad95 Generated table #58@0: 36 keys, 2616 bytes
+2024/07/24-16:36:40.605 3ad95 Compacted 4@0 + 1@1 files => 2616 bytes
+2024/07/24-16:36:40.617 3ad95 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/07/24-16:36:40.618 3ad95 Delete type=2 #54
+2024/07/24-16:36:40.618 3ad95 Delete type=2 #48
+2024/07/24-16:36:40.618 3ad95 Delete type=2 #52
+2024/07/24-16:36:40.618 3ad95 Delete type=2 #50
+2024/07/24-16:36:40.618 3ad95 Delete type=2 #56

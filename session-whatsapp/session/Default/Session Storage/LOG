@@ -1,3 +1,5 @@
-2024/07/22-03:25:05.657 2c60 Reusing MANIFEST C:\Users\thiag\OneDrive\Área de Trabalho\projetos\guest-list-linux\lista-de-presenca\session-whatsapp\session\Default\Session Storage/MANIFEST-000001
-2024/07/22-03:25:05.658 2c60 Recovering log #3
-2024/07/22-03:25:05.658 2c60 Reusing old log C:\Users\thiag\OneDrive\Área de Trabalho\projetos\guest-list-linux\lista-de-presenca\session-whatsapp\session\Default\Session Storage/000003.log 
+2024/07/24-16:45:27.773 3af76 Recovering log #22
+2024/07/24-16:45:27.775 3af76 Level-0 table #24: started
+2024/07/24-16:45:27.776 3af76 Level-0 table #24: 321 bytes OK
+2024/07/24-16:45:27.779 3af76 Delete type=0 #22
+2024/07/24-16:45:27.779 3af76 Delete type=3 #20

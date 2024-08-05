@@ -1,3 +1,5 @@
-2024/07/22-03:23:27.880 1f94 Reusing MANIFEST C:\Users\thiag\OneDrive\Área de Trabalho\projetos\guest-list-linux\lista-de-presenca\session-whatsapp\session\Default\Service Worker\Database/MANIFEST-000001
-2024/07/22-03:23:27.880 1f94 Recovering log #3
-2024/07/22-03:23:27.880 1f94 Reusing old log C:\Users\thiag\OneDrive\Área de Trabalho\projetos\guest-list-linux\lista-de-presenca\session-whatsapp\session\Default\Service Worker\Database/000003.log 
+2024/07/24-16:36:40.814 3ad95 Recovering log #17
+2024/07/24-16:36:40.819 3ad95 Level-0 table #20: started
+2024/07/24-16:36:40.833 3ad95 Level-0 table #20: 695 bytes OK
+2024/07/24-16:36:40.881 3ad95 Delete type=3 #15
+2024/07/24-16:36:40.881 3ad95 Delete type=0 #17

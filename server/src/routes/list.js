@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const listHandlers = require(path.resolve(__dirname, '../js/handler-list'));
-const { phoneSanitize, sendMessage, isClientConnected } = require(path.resolve(__dirname, '../js/whatsapp-handler'));
+const {client,  sendMessage, isClientConnected, phoneSanitize } = require(path.resolve(__dirname, '../js/whatsapp-handler'));
 const fs = require('fs');
 
 // Caminho absoluto para a pasta 'files' baseado no diretório do projeto
@@ -65,7 +65,7 @@ router.post('/confirmar', express.json(), async (req, res) => {
             try {
                 let number = phoneSanitize(data[0].phone);
                 if (isClientConnected()) {
-                    await sendMessage('*thiago cazuni - testando bot* Olá, obrigado por marcar presença no evento', number);
+                    await sendMessage('*Mensagem automática* Olá, tudo bem? Obrigado por confirmar presença, não se esqueça, será no dia 28/07/2024, apartir das 15:30h, Rua gramado, 330, Bairro Figueiras - Igrejinha - RS abraço! Aguardamos vocês  ', number);
                 } else {
                     console.error('Client is not connected');
                 }

@@ -11,6 +11,7 @@
         
         setTimeout(() => {
             init()
+                // triggerProcessing()
             
         }, 2000);
 
@@ -411,12 +412,18 @@
             haveContent:true,
             haveFooter:false,
         }) 
-       
+        // md.content.css({
+        //     display:'flex',
+        //     flexDirection:'column'
+        // })
+        
+        
         md.setContents({
             content: container.outerHTML
         })
-
+        
         md.init()
+        md.content.style.cssText = 'flex-direction:column;' + 'display:flex';
         
         return md
     }
@@ -433,3 +440,4 @@
 
         return result;
     }
+

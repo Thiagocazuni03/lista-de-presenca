@@ -48,7 +48,7 @@ const listHandlers = {
           content = JSON.parse(newContent)
           }
     
-              fs.writeFile(fileName, JSON.stringify(content, null,  3), (err)=>{
+              fs.writeFile(absoluteFilePath, JSON.stringify(content, null,  3), (err)=>{
           console.log('see here 4')
                     if (err) throw err;
           console.log('see here 5')
